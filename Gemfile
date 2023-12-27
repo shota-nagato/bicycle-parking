@@ -11,15 +11,14 @@ gem "turbo-rails"
 gem "stimulus-rails"
 gem "cssbundling-rails"
 gem "jbuilder"
-gem "tzinfo-data", platforms: %i[ windows jruby ]
+gem "tzinfo-data", platforms: %i[windows jruby]
 gem "bootsnap", require: false
 
 group :development, :test do
-  gem "debug", platforms: %i[ mri windows ]
+  gem "debug", platforms: %i[mri windows]
   gem "standard"
 end
 
 group :development do
   gem "web-console"
 end
-
