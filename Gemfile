@@ -14,6 +14,8 @@ gem "jbuilder"
 gem "tzinfo-data", platforms: %i[windows jruby]
 gem "bootsnap", require: false
 
+gem "mapkick-rb"
+
 group :development, :test do
   gem "debug", platforms: %i[mri windows]
   gem "brakeman"
