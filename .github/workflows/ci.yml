@@ -72,5 +72,20 @@ jobs:
         with:
           bundler-cache: true
 
-      - name: Run rubocop
+      - name: Run standard
         run: bundle exec standardrb
+
+  brakeman:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Run brakeman
+        run: bundle exec brakeman
