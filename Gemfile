@@ -19,6 +19,7 @@ gem "mapkick-rb"
 group :development, :test do
   gem "debug", platforms: %i[mri windows]
   gem "brakeman"
+  gem "dotenv-rails"
   gem "factory_bot_rails"
   gem "rspec-rails"
   gem "standard"
