@@ -16,6 +16,8 @@ gem "bootsnap", require: false
 
 group :development, :test do
   gem "debug", platforms: %i[mri windows]
+  gem "factory_bot_rails"
+  gem "rspec-rails"
   gem "standard"
 end
 
