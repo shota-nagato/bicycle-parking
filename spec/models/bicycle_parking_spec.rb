@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe BicycleParking, type: :model do
   let!(:bicycle_parking) { create(:bicycle_parking) }
