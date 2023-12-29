@@ -17,6 +17,5 @@ class CreateBicycleParkings < ActiveRecord::Migration[7.1]
       t.timestamps
     end
     add_index :bicycle_parkings, :name, unique: true
-    add_index :bicycle_parkings, :location, unique: true
   end
 end

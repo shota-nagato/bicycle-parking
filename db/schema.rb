@@ -29,7 +29,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_29_042415) do
     t.boolean "published", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["location"], name: "index_bicycle_parkings_on_location", unique: true
     t.index ["name"], name: "index_bicycle_parkings_on_name", unique: true
   end
 
