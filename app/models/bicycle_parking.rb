@@ -7,7 +7,11 @@ class BicycleParking < ApplicationRecord
   validates :motorized_bicycle_under_125cc_capacity, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :bicycle_and_motorized_bicycle_under_50cc_capacity, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :motorcycle_capacity, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
-  validates :motorcycle_price, presence: true
+  validates :motorcycle_price, presence: true, if: :motorcycle_parkable?
   validates :latitude, presence: true
   validates :longitude, presence: true
+
+  def motorcycle_parkable?
+    motorcycle_capacity > 0
+  end
 end
