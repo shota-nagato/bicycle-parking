@@ -26,6 +26,10 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_30_005418) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+ActiveRecord::Schema[7.1].define(version: 2023_12_29_042415) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "bicycle_parkings", force: :cascade do |t|
     t.string "name", null: false
     t.string "location", null: false

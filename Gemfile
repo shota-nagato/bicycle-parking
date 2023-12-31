@@ -15,10 +15,13 @@ gem "tzinfo-data", platforms: %i[windows jruby]
 gem "bootsnap", require: false
 
 gem "devise"
+gem "mapkick-rb"
 
 group :development, :test do
   gem "debug", platforms: %i[mri windows]
+  gem "erb_lint"
   gem "brakeman"
+  gem "dotenv-rails"
   gem "factory_bot_rails"
   gem "rspec-rails"
   gem "standard"
