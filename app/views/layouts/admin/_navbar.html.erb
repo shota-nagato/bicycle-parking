@@ -9,7 +9,7 @@
               <button type="button" data-action="dropdown#toggle click@window->dropdown#hide" class="flex items-center">
                 <%= current_admin.email %>
                 <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
                 </svg>
               </button>
               <div
@@ -18,8 +18,7 @@
                 data-transition-enter-from="opacity-0 scale-95"
                 data-transition-enter-to="opacity-100 scale-100"
                 data-transition-leave-from="opacity-100 scale-100"
-                data-transition-leave-to="opacity-0 scale-95"
-              >
+                data-transition-leave-to="opacity-0 scale-95">
                 <div class="bg-white flex flex-col gap-2 p-2 shadow rounded">
                   <%= button_to "ログアウト", destroy_admin_session_path, method: :delete %>
                 </div>
