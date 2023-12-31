@@ -89,3 +89,18 @@ jobs:
 
       - name: Run brakeman
         run: bundle exec brakeman
+
+  erblint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Run erblint
+        run: bundle exec erblint --lint-all
