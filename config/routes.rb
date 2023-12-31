@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   devise_for :admins, controllers:  {
-    sessions: 'admins/sessions'
+    sessions: 'admin/sessions'
   }
   root "welcome#index"
+
+  namespace :admin do
+    root to: "bicycle_parkings#index"
+  end
 end
