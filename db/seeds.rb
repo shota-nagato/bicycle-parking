@@ -1,5 +1,10 @@
 require "csv"
 
+Admin.create!(
+  email: "admin@example.com",
+  password: "password"
+)
+
 CSV.foreach("db/csv/2023_03_31_bicycle_parking_list.csv", headers: true, encoding: "utf-8") do |row|
   bicycle_capacity = (row["自転車収容台数"] == "-") ? 0 : row["自転車収容台数"].to_i
   motorized_bicycle_under_50cc_capacity = (row["50cc以下の原動機付自転車収容台数"] == "-") ? 0 : row["50cc以下の原動機付自転車収容台数"].to_i

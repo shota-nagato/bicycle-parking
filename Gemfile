@@ -14,6 +14,7 @@ gem "jbuilder"
 gem "tzinfo-data", platforms: %i[windows jruby]
 gem "bootsnap", require: false
 
+gem "devise"
 gem "mapkick-rb"
 
 group :development, :test do
@@ -28,4 +29,9 @@ end
 
 group :development do
   gem "web-console"
+end
+
+group :test do
+  gem "capybara"
+  gem "selenium-webdriver"
 end
