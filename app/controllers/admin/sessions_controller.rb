@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Admin::SessionsController < Devise::SessionsController
-  layout 'admin/application'
+  layout "admin/application"
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
@@ -22,12 +22,12 @@ class Admin::SessionsController < Devise::SessionsController
   # protected
 
   def after_sign_in_path_for(resource)
-    flash[:notice] = t('devise.sessions.signed_in')
+    flash[:notice] = t("devise.sessions.signed_in")
     admin_root_path
   end
 
   def after_sign_out_path_for(resource)
-    flash[:notice] = t('devise.sessions.signed_out')
+    flash[:notice] = t("devise.sessions.signed_out")
     new_admin_session_path
   end
 
