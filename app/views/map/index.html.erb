@@ -1,2 +1,1 @@
-<%# TODO: データベースから取得したデータの配列を格納する %>
-<%= js_map [{latitude: 33.236846498113, longitude: 131.609618359959, tooltip: render("info")}], tooltips: {html: true}, style: @mapbox_japan_style %>
+<%= js_map @data, tooltips: {html: true, hover: false}, style: @mapbox_japan_style %>
