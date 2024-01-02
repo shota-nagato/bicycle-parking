@@ -15,6 +15,19 @@ class BicycleParking < ApplicationRecord
     end
   end
 
+  scope :motorcycle_parkable, -> { where('motorcycle_capacity > 0') }
+  scope :motorized_bicycle_under_50cc_parkable, -> { where('motorized_bicycle_under_50cc_capacity > 0 or bicycle_and_motorized_bicycle_under_50cc_capacity > 0') }
+  scope :motorized_bicycle_under_125cc_parkable, -> { where('motorized_bicycle_under_125cc_capacity > 0') }
+
+  def motorized_bicycle_under_50cc_parkable?
+    motorized_bicycle_under_50cc_capacity > 0 ||
+    bicycle_and_motorized_bicycle_under_50cc_capacity > 0
+  end
+
+  def motorized_bicycle_under_125cc_parkable?
+    motorized_bicycle_under_125cc_capacity > 0
+  end
+
   def motorcycle_parkable?
     motorcycle_capacity > 0
   end
