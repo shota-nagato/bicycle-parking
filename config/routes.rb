@@ -7,4 +7,5 @@ Rails.application.routes.draw do
     root to: "bicycle_parkings#index"
   end
   root "map#index"
+  resources :search, only: :index
 end
