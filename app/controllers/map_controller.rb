@@ -11,9 +11,9 @@ class MapController < ApplicationController
     if bicycle_parkings.count > 0
       flash.now[:notice] = "#{bicycle_parkings.count}件見つかりました"
     else
-      flash.now[:alert] = '見つかりませんでした'
+      flash.now[:alert] = "見つかりませんでした"
     end
-    @data = bicycle_parkings.map { |parking| { latitude: parking.latitude, longitude: parking.longitude, tooltip: render_to_string(partial: 'map/info', locals: { parking: parking }) } }
+    @data = bicycle_parkings.map { |parking| {latitude: parking.latitude, longitude: parking.longitude, tooltip: render_to_string(partial: "map/info", locals: {parking: parking})} }
   end
 
   private
