@@ -2,9 +2,8 @@
   id="map"
   data-controller="map"
   data-map-target="map"
-  data-mapbox-access-token=<%= @mapbox_access_token %>
-  data-mapbox-japan-style=<%= @mapbox_japan_style %>
-  data-image-path=<%= image_path("bicycle.png") %>
->
+  data-mapbox-access-token="<%= @mapbox_access_token %>"
+  data-mapbox-japan-style="<%= @mapbox_japan_style %>"
+  data-image-path="<%= image_path("bicycle.png") %>">
   <input type="hidden" id="data" value="<%= @bicycle_parkings_information.to_json %>">
 </div>
