@@ -16,7 +16,6 @@ gem "bootsnap", require: false
 
 gem "devise"
 gem "has_scope"
-gem "mapkick-rb"
 
 group :development, :test do
   gem "debug", platforms: %i[mri windows]

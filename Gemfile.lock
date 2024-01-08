@@ -165,7 +165,6 @@ GEM
       net-imap
       net-pop
       net-smtp
-    mapkick-rb (0.1.5)
     marcel (1.0.2)
     matrix (0.4.2)
     mini_mime (1.1.5)
@@ -354,7 +353,6 @@ DEPENDENCIES
   has_scope
   jbuilder
   jsbundling-rails
-  mapkick-rb
   pg (~> 1.1)
   puma (>= 5.0)
   rails (~> 7.1.2)
