@@ -1,5 +1,6 @@
 class MapController < ApplicationController
   before_action :set_japan_style_url
+  before_action :set_access_token
   before_action :set_search_params
 
   has_scope :motorized_bicycle_under_50cc_parkable, type: :boolean
@@ -13,13 +14,17 @@ class MapController < ApplicationController
     else
       flash.now[:alert] = "見つかりませんでした"
     end
-    @data = bicycle_parkings.map { |parking| {latitude: parking.latitude, longitude: parking.longitude, tooltip: render_to_string(partial: "map/info", locals: {parking: parking})} }
+    @bicycle_parkings_information = bicycle_parkings.map { |parking| {latitude: parking.latitude, longitude: parking.longitude, discription: render_to_string(partial: "map/discription", locals: {parking: parking})} }
   end
 
   private
 
   def set_japan_style_url
     @mapbox_japan_style = ENV["MAPBOX_JAPAN_STYLE"]
+  end
+
+  def set_access_token
+    @mapbox_access_token = ENV["MAPBOX_ACCESS_TOKEN"]
   end
 
   def set_search_params
