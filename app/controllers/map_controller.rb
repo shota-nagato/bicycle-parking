@@ -32,6 +32,6 @@ class MapController < ApplicationController
   end
 
   def search_params
-    params.permit(:motorized_bicycle_under_50cc_parkable, :motorized_bicycle_under_125cc_parkable, :motorcycle_parkable, :commit)
+    params.permit(:motorized_bicycle_under_50cc_parkable, :motorized_bicycle_under_125cc_parkable, :motorcycle_parkable)
   end
 end
