@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   end
   root "map#index"
   resources :search, only: :index
+  resources :about, only: :index
 end
