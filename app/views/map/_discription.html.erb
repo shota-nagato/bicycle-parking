@@ -1,0 +1,14 @@
+<div class="font-bold text-lg">
+  <%= parking.name %>
+</div>
+<p><%= parking.location %></p>
+<hr class="my-2 h-px border-0 bg-gray-300">
+<p>開場時間 : <%= parking.opening_hours %></p>
+<p>収容台数 : <%= capacity_text(parking) %></p>
+<% if parking.motorcycle_price != "" %>
+  <p>自動二輪料金 : <%= parking.motorcycle_price %></p>
+<% end %>
+
+<div class="w-full bg-blue-500 hover:bg-blue-700 text-white text-center font-bold py-2 px-4 mt-2 rounded-full">
+  <%= link_to "Google Mapで表示", "https://google.com/maps/search/?api=1&query=#{parking.latitude},#{parking.longitude}", target: "_blank", rel: "noopener noreferrer" %>
+</div>

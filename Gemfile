@@ -15,7 +15,7 @@ gem "tzinfo-data", platforms: %i[windows jruby]
 gem "bootsnap", require: false
 
 gem "devise"
-gem "mapkick-rb"
+gem "has_scope"
 
 group :development, :test do
   gem "debug", platforms: %i[mri windows]

@@ -1,0 +1,16 @@
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 0;
+}
+
+.marker {
+  display: block;
+  border: 2px solid #3aabd2;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 4;
+  background-color: #fff;
+}
