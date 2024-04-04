@@ -6,6 +6,7 @@ class MapController < ApplicationController
   has_scope :motorized_bicycle_under_50cc_parkable, type: :boolean
   has_scope :motorized_bicycle_under_125cc_parkable, type: :boolean
   has_scope :motorcycle_parkable, type: :boolean
+  has_scope :available_all_day, type: :boolean
 
   def index
     bicycle_parkings = apply_scopes(BicycleParking).all
@@ -32,6 +33,6 @@ class MapController < ApplicationController
   end
 
   def search_params
-    params.permit(:motorized_bicycle_under_50cc_parkable, :motorized_bicycle_under_125cc_parkable, :motorcycle_parkable)
+    params.permit(:motorized_bicycle_under_50cc_parkable, :motorized_bicycle_under_125cc_parkable, :motorcycle_parkable, :available_all_day)
   end
 end

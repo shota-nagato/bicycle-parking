@@ -34,7 +34,6 @@ cd bicycle_parking
 ```
 
 **3. .envファイルを作成**
-それぞれの値は担当者に聞いてください
 ```
 MAPBOX_ACCESS_TOKEN="your access token"
 MAPBOX_JAPAN_STYLE="japan style url"

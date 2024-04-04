@@ -58,5 +58,11 @@ standard:
 standard_fix:
 	${DOCKER_COMPOSE_RUN}  standardrb --fix
 
+erblint:
+	${DOCKER_COMPOSE_RUN} erblint --lint-all
+
+erblint_fix:
+	${DOCKER_COMPOSE_RUN} erblint --lint-all -a
+
 brakeman:
 	${DOCKER_COMPOSE_RUN} brakeman
