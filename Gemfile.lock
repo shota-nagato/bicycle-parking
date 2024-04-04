@@ -89,7 +89,7 @@ GEM
       smart_properties
     bigdecimal (3.1.7)
     bindex (0.8.1)
-    bootsnap (1.17.0)
+    bootsnap (1.18.3)
       msgpack (~> 1.2)
     brakeman (6.1.1)
       racc
