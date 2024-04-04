@@ -10,4 +10,12 @@ module BicycleParkingsHelper
       capacity_text
     end
   end
+
+  def status_text(parking)
+    parking.published ? "公開中" : "非公開"
+  end
+
+  def status_style(parking)
+    parking.published ? "blue" : "red"
+  end
 end

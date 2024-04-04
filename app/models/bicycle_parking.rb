@@ -19,6 +19,7 @@ class BicycleParking < ApplicationRecord
   scope :motorized_bicycle_under_50cc_parkable, -> { where("motorized_bicycle_under_50cc_capacity > 0 or bicycle_and_motorized_bicycle_under_50cc_capacity > 0") }
   scope :motorized_bicycle_under_125cc_parkable, -> { where("motorized_bicycle_under_125cc_capacity > 0") }
   scope :available_all_day, -> { where(opening_hours: "終日") }
+  scope :default_order, -> { order(created_at: :desc) }
 
   def motorized_bicycle_under_50cc_parkable?
     motorized_bicycle_under_50cc_capacity > 0 ||
