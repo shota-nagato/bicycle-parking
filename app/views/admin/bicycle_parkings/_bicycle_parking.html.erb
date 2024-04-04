@@ -1,0 +1,7 @@
+<tr class="border-b border-neutral-200">
+  <td class="px-4 py-2"><%= bicycle_parking.name %></td>
+  <td class="px-4 py-2"><%= bicycle_parking.location %></td>
+  <td class="px-4 py-2"><%= bicycle_parking.opening_hours %></td>
+  <td class="hidden md:block px-4 py-2"><span class="bg-<%= status_style(bicycle_parking) %>-100 text-<%= status_style(bicycle_parking) %>-800 px-2.5 py-0.5 rounded"><%= status_text(bicycle_parking) %></span></td>
+  <td class="px-4 py-2"><%= link_to "詳細", "#", class: "flex justify-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %></td>
+</tr>
