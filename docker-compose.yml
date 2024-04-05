@@ -13,6 +13,9 @@ services:
       TZ: Asia/Tokyo
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
+      SELENIUM_DRIVER_URL: http://selenium_chrome:4444/wd/hub
+      CAPYBARA_SERVER_HOST: rails
+      CAPYBARA_APP_HOST: http://rails
     build:
       context: .
       dockerfile: Dockerfile.dev
@@ -25,5 +28,9 @@ services:
     tty: true
     depends_on:
       - db
+  selenium_chrome:
+    image: seleniarm/standalone-chromium:4.17.0
+    ports:
+      - "4444:4444"
 volumes:
   db-data:
