@@ -1,7 +1,7 @@
 <nav class="bg-white shadow">
   <div class="max-w-screen-xl flex items-center justify-between mx-auto p-4">
     <%= link_to admin_root_path do %>
-      <%= image_tag "bicycle.png", class: "w-7 h-7" %>
+      <%= image_tag "bicycle.png", class: "w-7 h-7 toggle-user-icon" %>
     <% end %>
     <% if admin_signed_in? %>
       <div class="w-auto" id="navbar-default">
