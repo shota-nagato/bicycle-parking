@@ -1,17 +1,27 @@
-<div class="text-xm font-bold px-4 mb-4">
-  駐輪場一覧
+<div class="flex flex-col gap-3 md:flex-row md:justify-between mb-4">
+  <div class="text-xm font-bold">
+    駐輪場一覧
+  </div>
+  <div class="flex items-center gap-2 text-xs">
+    <%= link_to "ダッシュボード /", admin_root_path, class: "text-gray-500" %>
+    <div class="text-blue-500">
+      駐輪場一覧
+    </div>
+  </div>
 </div>
-<table class="w-full text-left text-xs">
-  <thead class="border-b-2 border-neutral-200">
-    <tr>
-      <th class="px-4 py-2">名称</th>
-      <th class="px-4 py-2">所在地</th>
-      <th class="px-4 py-2">開場時間</th>
-      <th class="hidden md:block px-4 py-2">ステータス</th>
-      <th class="px-4 py-2"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <%= render @bicycle_parkings %>
-  </tbody>
-</table>
+<div class="max-w-full overflow-x-auto">
+  <table class="w-full table-auto text-left text-xs bg-white">
+    <thead class="border-b-2 border-neutral-200">
+      <tr>
+        <th class="min-w-[150px] px-4 py-2">名称</th>
+        <th class="min-w-[240px] px-4 py-2">所在地</th>
+        <th class="min-w-[150px] px-4 py-2">開場時間</th>
+        <th class="min-w-[95px] px-4 py-2">ステータス</th>
+        <th class="min-w-[50px] px-4 py-2"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @bicycle_parkings %>
+    </tbody>
+  </table>
+</div>

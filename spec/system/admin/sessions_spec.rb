@@ -15,7 +15,6 @@ RSpec.describe "管理者機能", type: :system do
         click_button "ログイン"
         expect(page).to have_current_path admin_root_path
         expect(page).to have_content "ログインしました"
-        expect(page).to have_content "admin@example.com"
       end
     end
 
@@ -43,7 +42,7 @@ RSpec.describe "管理者機能", type: :system do
       it "ログインページに遷移する" do
         sign_in admin
         visit admin_root_path
-        click_on "admin@example.com"
+        find(".toggle-user-icon").click
         click_button "ログアウト"
         expect(page).to have_current_path new_admin_session_path
         expect(page).to have_content "ログアウトしました"

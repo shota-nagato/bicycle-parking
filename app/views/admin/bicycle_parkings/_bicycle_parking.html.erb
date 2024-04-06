@@ -2,7 +2,7 @@
   <td class="px-4 py-1"><%= bicycle_parking.name %></td>
   <td class="px-4 py-1"><%= bicycle_parking.location %></td>
   <td class="px-4 py-1"><%= bicycle_parking.opening_hours %></td>
-  <td class="hidden md:block px-4 py-2"><span class="<%= status_style(bicycle_parking) %>"><%= status_text(bicycle_parking) %></span></td>
+  <td class="px-4 py-1"><span class="<%= status_style(bicycle_parking) %>"><%= status_text(bicycle_parking) %></span></td>
   <td class="px-4 py-1">
     <div class="flex gap-2">
       <%= link_to admin_bicycle_parking_path(bicycle_parking), class: "text-blue-500 hover:text-blue-700" do %>

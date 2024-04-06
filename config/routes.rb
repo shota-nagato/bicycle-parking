@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   }
 
   namespace :admin do
-    root to: "bicycle_parkings#index"
+    root to: "dashboard#index"
     resources :bicycle_parkings
   end
   root "map#index"
