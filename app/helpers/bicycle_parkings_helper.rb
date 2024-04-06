@@ -16,6 +16,9 @@ module BicycleParkingsHelper
   end
 
   def status_style(parking)
-    parking.published ? "blue" : "red"
+    parking.published ?
+      "bg-blue-100 text-blue-800 px-2.5 py-0.5 rounded"
+      :
+      "bg-red-100 text-red-800 px-2.5 py-0.5 rounded"
   end
 end

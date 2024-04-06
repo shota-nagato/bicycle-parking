@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: "bicycle_parkings#index"
+    resources :bicycle_parkings
   end
   root "map#index"
   resources :search, only: :index
