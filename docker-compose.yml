@@ -16,6 +16,7 @@ services:
       SELENIUM_DRIVER_URL: http://selenium_chrome:4444/wd/hub
       CAPYBARA_SERVER_HOST: rails
       CAPYBARA_APP_HOST: http://rails
+      REDIS_URL: redis://redis:6379
     build:
       context: .
       dockerfile: Dockerfile.dev
@@ -28,9 +29,29 @@ services:
     tty: true
     depends_on:
       - db
+      - redis
+  redis:
+    image: redis:latest
+    ports:
+      - 6379:6379
+    volumes:
+      - redis-data:/data
+  sidekiq:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: bundle exec sidekiq -C config/sidekiq.yml
+    depends_on:
+      - db
+      - redis
+    volumes:
+      - .:/myapp
+      - bundle:/usr/local/bundle
   selenium_chrome:
     image: seleniarm/standalone-chromium:4.17.0
     ports:
       - "4444:4444"
 volumes:
   db-data:
+  redis-data:
+  bundle:
