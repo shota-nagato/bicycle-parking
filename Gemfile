@@ -16,6 +16,8 @@ gem "bootsnap", require: false
 
 gem "devise"
 gem "has_scope"
+gem "redis"
+gem "sidekiq"
 
 group :development, :test do
   gem "debug", platforms: %i[mri windows]
