@@ -37,6 +37,7 @@ module BicycleParkingApp
     # config.eager_load_paths << Rails.root.join("extras")
 
     # Don't generate system test files.
+    config.active_job.queue_adapter = :sidekiq
     config.generators.system_tests = nil
     config.i18n.default_locale = :ja
     config.time_zone = "Tokyo"
