@@ -74,5 +74,5 @@ Rails.application.configure do
   # Raise error when a before_action's only/except options reference missing actions
   # https://qiita.com/keitah/items/7be0d5eb381845e215b6
   config.action_controller.raise_on_missing_callback_actions = true
-  config.web_console.whitelisted_ips ="192.168.65.1"
+  config.web_console.whitelisted_ips = "192.168.65.1"
 end
