@@ -1,6 +1,13 @@
 <div class="flex flex-col gap-3 md:flex-row md:justify-between mb-4">
-  <div class="text-xm font-bold">
-    駐輪場一覧
+  <div class="flex items-center gap-2">
+    <div class="text-xm font-bold">
+      駐輪場一覧
+    </div>
+    <%= link_to new_admin_bicycle_parking_path, class: "text-blue-500 hover:text-blue-700" do %>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+        <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z" clip-rule="evenodd" />
+      </svg>
+    <% end %>
   </div>
   <div class="flex items-center gap-2 text-xs">
     <%= link_to "ダッシュボード /", admin_root_path, class: "text-gray-500" %>
