@@ -1,0 +1,88 @@
+<div class="bg-white rounded py-4">
+  <%= form_with(model: [:admin, bicycle_parking], html: { class: "mx-auto w-2/3" }, data: { controller: "bicycle-parkings", action: "input->bicycle-parkings#validSubmit" }) do |f| %>
+    <%= render "shared/error_messages", resource: bicycle_parking %>
+    <%#= 名称 %>
+    <div class="mb-4">
+      <%= f.label :name, id: "name", class: "text-gray-700 text-sm font-bold" %><span class="text-red-500 ml-1">*</span>
+      <%= f.text_field :name, class: "shadow border rounded outline-none w-full py-2 px-3 text-gray-700", placeholder: "大分駅南口駐輪場", data: { bicycle_parkings_target: "name", action: "input->bicycle-parkings#nameValidation" } %>
+      <p data-bicycle-parkings-target="error_name" class="text-xs"></p>
+    </div>
+
+    <%#= 所在地 %>
+    <div class="mb-4">
+      <%= f.label :location, id: "location", class: "text-gray-700 text-sm font-bold" %><span class="text-red-500 ml-1">*</span>
+      <%= f.text_field :location, class: "shadow border rounded outline-none w-full py-2 px-3 text-gray-700", placeholder: "大分市金池南1丁目107番", data: { bicycle_parkings_target: "location", action: "input->bicycle-parkings#locationValidation" } %>
+      <p data-bicycle-parkings-target="error_location" class="text-xs"></p>
+    </div>
+
+    <%#= 開場時間 %>
+    <div class="mb-4">
+      <%= f.label :opening_hours, id: "opening_hours", class: "text-gray-700 text-sm font-bold" %><span class="text-red-500 ml-1">*</span>
+      <%= f.text_field :opening_hours, class: "shadow border rounded outline-none w-full py-2 px-3 text-gray-700", placeholder: "終日", data: { bicycle_parkings_target: "opening_hours", action: "input->bicycle-parkings#openingHoursValidation" } %>
+      <p data-bicycle-parkings-target="error_opening_hours" class="text-xs"></p>
+    </div>
+
+    <%#= 自転車収容台数 %>
+    <div class="mb-4">
+      <%= f.label :bicycle_capacity, id: "bicycle_capacity", class: "text-gray-700 text-sm font-bold" %><span class="text-red-500 ml-1">*</span>
+      <%= f.number_field :bicycle_capacity, class: "shadow border rounded outline-none w-full py-2 px-3 text-gray-700", data: { bicycle_parkings_target: "bicycle_capacity", action: "input->bicycle-parkings#bicycleCapacityValidation" } %>
+      <p data-bicycle-parkings-target="error_bicycle_capacity" class="text-xs"></p>
+    </div>
+
+    <%#= 50cc以下の原動機付自転車収容台数 %>
+    <div class="mb-4">
+      <%= f.label :motorized_bicycle_under_50cc_capacity, id: "motorized_bicycle_under_50cc_capacity", class: "text-gray-700 text-sm font-bold" %><span class="text-red-500 ml-1">*</span>
+      <%= f.number_field :motorized_bicycle_under_50cc_capacity, class: "shadow border rounded outline-none w-full py-2 px-3 text-gray-700", data: { bicycle_parkings_target: "motorized_bicycle_under_50cc_capacity", action: "input->bicycle-parkings#motorizedBicycleUnder50ccCapacityValidation" } %>
+      <p data-bicycle-parkings-target="error_motorized_bicycle_under_50cc_capacity" class="text-xs"></p>
+    </div>
+
+    <%#= 125cc以下の原動機付自転車収容台数 %>
+    <div class="mb-4">
+      <%= f.label :motorized_bicycle_under_125cc_capacity, id: "motorized_bicycle_under_125cc_capacity", class: "text-gray-700 text-sm font-bold" %><span class="text-red-500 ml-1">*</span>
+      <%= f.number_field :motorized_bicycle_under_125cc_capacity, class: "shadow border rounded outline-none w-full py-2 px-3 text-gray-700", data: { bicycle_parkings_target: "motorized_bicycle_under_125cc_capacity", action: "input->bicycle-parkings#motorizedBicycleUnder125ccCapacityValidation" } %>
+      <p data-bicycle-parkings-target="error_motorized_bicycle_under_125cc_capacity" class="text-xs"></p>
+    </div>
+
+    <%#= 自転車・50cc以下の原動機付自転車収容台数 %>
+    <div class="mb-4">
+      <%= f.label :bicycle_and_motorized_bicycle_under_50cc_capacity, id: "bicycle_and_motorized_bicycle_under_50cc_capacity", class: "text-gray-700 text-sm font-bold" %><span class="text-red-500 ml-1">*</span>
+      <%= f.number_field :bicycle_and_motorized_bicycle_under_50cc_capacity, class: "shadow border rounded outline-none w-full py-2 px-3 text-gray-700", data: { bicycle_parkings_target: "bicycle_and_motorized_bicycle_under_50cc_capacity", action: "input->bicycle-parkings#bicycleAndMotorizedBicycleUnder50ccCapacityValidation" } %>
+      <p data-bicycle-parkings-target="error_bicycle_and_motorized_bicycle_under_50cc_capacity" class="text-xs"></p>
+    </div>
+
+    <%#= 自動二輪車収容台数 %>
+    <div class="mb-4">
+      <%= f.label :motorcycle_capacity, id: "motorcycle_capacity", class: "text-gray-700 text-sm font-bold" %><span class="text-red-500 ml-1">*</span>
+      <%= f.number_field :motorcycle_capacity, class: "shadow border rounded outline-none w-full py-2 px-3 text-gray-700", data: { bicycle_parkings_target: "motorcycle_capacity", action: "input->bicycle-parkings#motorcycleCapacityValidation" } %>
+      <p data-bicycle-parkings-target="error_motorcycle_capacity" class="text-xs"></p>
+    </div>
+
+    <%#= 自動二輪車料金 %>
+    <div class="mb-4">
+      <%= f.label :motorcycle_price, class: "text-gray-700 text-sm font-bold" %>
+      <%= f.text_field :motorcycle_price, class: "shadow border rounded outline-none w-full py-2 px-3 text-gray-700" %>
+    </div>
+
+    <%#= 緯度 %>
+    <div class="mb-4">
+      <%= f.label :latitude, id: "latitude", class: "text-gray-700 text-sm font-bold" %><span class="text-red-500 ml-1">*</span>
+      <%= f.text_field :latitude, class: "shadow border rounded outline-none w-full py-2 px-3 text-gray-700", data: { bicycle_parkings_target: "latitude", action: "input->bicycle-parkings#latitudeValidation" } %>
+      <p data-bicycle-parkings-target="error_latitude" class="text-xs"></p>
+    </div>
+
+    <%#= 経度 %>
+    <div class="mb-4">
+      <%= f.label :longitude, id: "longitude", class: "text-gray-700 text-sm font-bold" %><span class="text-red-500 ml-1">*</span>
+      <%= f.text_field :longitude, class: "shadow border rounded outline-none w-full py-2 px-3 text-gray-700", data: { bicycle_parkings_target: "longitude", action: "input->bicycle-parkings#longitudeValidation" } %>
+      <p data-bicycle-parkings-target="error_longitude" class="text-xs"></p>
+    </div>
+
+    <%#= 公開ステータス %>
+    <div class="mb-4 flex items-center gap-2">
+      <%= f.label :published, "公開する", class: "text-gray-700 text-sm font-bold" %>
+      <%= f.check_box :published, class: "h-5 w-5 rounded outline-none border-gray-300 shadow-sm" %>
+    </div>
+
+    <%= f.submit yield(:button_text), class: "bg-gray-400 text-white text-sm font-bold py-2 px-4 rounded", disabled: true, data: { bicycle_parkings_target: "submit" } %>
+  <% end %>
+</div>
