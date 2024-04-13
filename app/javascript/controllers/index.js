@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import BicycleParkingsController from "./bicycle_parkings_controller"
+application.register("bicycle-parkings", BicycleParkingsController)
+
 import DropdownController from "./dropdown_controller"
 application.register("dropdown", DropdownController)
 
