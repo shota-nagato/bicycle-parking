@@ -33,7 +33,7 @@ class Admin::BicycleParkingsController < Admin::ApplicationController
   end
 
   def destroy
-    @bicycle_capacity.destroy!
+    @bicycle_parking.destroy!
     redirect_to admin_bicycle_parkings_path, notice: "削除しました"
   end
 
