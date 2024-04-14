@@ -4,6 +4,7 @@
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "^8.0.0-beta.2",
+    "@stimulus-components/popover": "^7.0.0",
     "autoprefixer": "^10.4.19",
     "esbuild": "^0.20.2",
     "mapbox-gl": "^3.0.1",
