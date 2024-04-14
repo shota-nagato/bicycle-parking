@@ -31,32 +31,43 @@
     </div>
   </div>
   <div class="grid md:grid-cols-2 gap-4 py-2">
-    <div class="flex flex-col gap-4">
+    <div class="flex flex-col gap-4 z-0">
       <div>
-        所在地：<%= @bicycle_parking.location %>
+        <%= "#{BicycleParking.human_attribute_name(:location)}：#{@bicycle_parking.location}" %>
       </div>
       <div>
-        営業時間：<%= @bicycle_parking.opening_hours %>
+        <%= "#{BicycleParking.human_attribute_name(:opening_hours)}：#{@bicycle_parking.opening_hours}" %>
       </div>
       <div>
-        自転車収容台数：<%= @bicycle_parking.bicycle_capacity %>台
+        <%= "#{BicycleParking.human_attribute_name(:bicycle_capacity)}：#{@bicycle_parking.bicycle_capacity}台" %>
       </div>
       <div>
-        50cc以下の原動機付自転車収容台数：<%= @bicycle_parking.motorized_bicycle_under_50cc_capacity %>台
+        <%= "#{BicycleParking.human_attribute_name(:motorized_bicycle_under_50cc_capacity)}：#{@bicycle_parking.motorized_bicycle_under_50cc_capacity}台" %>
       </div>
       <div>
-        125cc以下の原動機付自転車収容台数：<%= @bicycle_parking.motorized_bicycle_under_125cc_capacity %>台
+        <%= "#{BicycleParking.human_attribute_name(:motorized_bicycle_under_125cc_capacity)}：#{@bicycle_parking.motorized_bicycle_under_125cc_capacity}台" %>
       </div>
       <div>
-        自転車・50cc以下の原動機付自転車収容台数：<%= @bicycle_parking.bicycle_and_motorized_bicycle_under_50cc_capacity %>台
+        <%= "#{BicycleParking.human_attribute_name(:bicycle_and_motorized_bicycle_under_50cc_capacity)}：#{@bicycle_parking.bicycle_and_motorized_bicycle_under_50cc_capacity}台" %>
       </div>
       <div>
-        自動二輪車収容台数：<%= @bicycle_parking.motorcycle_capacity %>台
+        <%= "#{BicycleParking.human_attribute_name(:motorcycle_capacity)}：#{@bicycle_parking.motorcycle_capacity}台" %>
       </div>
       <div>
-        自動二輪車料金：<%= @bicycle_parking.motorcycle_price %>円
+        <%= "#{BicycleParking.human_attribute_name(:motorcycle_price)}：#{@bicycle_parking.motorcycle_price}円" %>
       </div>
     </div>
-    <div class="border">ここに地図が入ります</div>
+    <div class="relative h-[300px]">
+      <div
+        id="map"
+        class="absolute  h-[100%] top-0 left-0 z-20"
+        data-controller="map"
+        data-map-target="map"
+        data-mapbox-access-token="<%= @mapbox_access_token %>"
+        data-mapbox-japan-style="<%= @mapbox_japan_style %>"
+        data-image-path="<%= image_path("bicycle.png") %>">
+        <input type="hidden" id="data" value="<%= @bicycle_parking_information.to_json %>">
+      </div>
+    </div>
   </div>
 </div>
