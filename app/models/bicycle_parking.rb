@@ -1,4 +1,6 @@
 class BicycleParking < ApplicationRecord
+  has_one_attached :image
+
   with_options presence: true do
     validates :name, uniqueness: true
     validates :location
