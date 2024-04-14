@@ -18,3 +18,6 @@ application.register("map", MapController)
 
 import NotificationController from "./notification_controller"
 application.register("notification", NotificationController)
+
+import Popover from '@stimulus-components/popover'
+application.register('popover', Popover)
