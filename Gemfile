@@ -14,6 +14,7 @@ gem "jbuilder"
 gem "tzinfo-data", platforms: %i[windows jruby]
 gem "bootsnap", require: false
 
+gem "aws-sdk-s3"
 gem "devise"
 gem "has_scope"
 gem "redis"
