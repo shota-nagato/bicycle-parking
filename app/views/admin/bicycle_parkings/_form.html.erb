@@ -77,6 +77,12 @@
       <p data-bicycle-parkings-target="error_longitude" class="text-xs"></p>
     </div>
 
+    <%#= 画像 %>
+    <div class="mb-4">
+      <%= f.label :image, class: "text-gray-700 text-sm font-bold" %>
+      <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png", class: "block w-full text-sm border cursor-pointer file:cursor-pointer rounded-md file:mr-4 file:rounded-l-md file:border-0 bg-gray-50 file:bg-gray-800 file:py-2.5 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-primary-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" %>
+    </div>
+
     <%#= 公開ステータス %>
     <div class="mb-4 flex items-center gap-2">
       <%= f.label :published, "公開する", class: "text-gray-700 text-sm font-bold" %>

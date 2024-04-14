@@ -20,6 +20,7 @@ class Admin::BicycleParkingsController < Admin::ApplicationController
 
   def create
     @bicycle_parking = BicycleParking.new(bicycle_parking_params)
+    @bicycle_parking.image.attach(params[:bicycle_parking][:image])
     if @bicycle_parking.save
       redirect_to admin_bicycle_parkings_path, notice: "作成しました"
     else
@@ -67,7 +68,8 @@ class Admin::BicycleParkingsController < Admin::ApplicationController
       :motorcycle_price,
       :latitude,
       :longitude,
-      :published
+      :published,
+      :image
     )
   end
 end
