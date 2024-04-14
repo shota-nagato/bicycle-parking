@@ -1,11 +1,14 @@
 class Admin::BicycleParkingsController < Admin::ApplicationController
   before_action :set_bicycle_parking, only: %i[show edit update destroy]
+  before_action :set_access_token, only: :show
+  before_action :set_japan_style_url, only: :show
 
   def index
     @bicycle_parkings = BicycleParking.default_order
   end
 
   def show
+    @bicycle_parking_information = [{latitude: @bicycle_parking.latitude, longitude: @bicycle_parking.longitude, discription: render_to_string(partial: "map/discription", locals: {parking: @bicycle_parking})}]
   end
 
   def new
@@ -41,6 +44,14 @@ class Admin::BicycleParkingsController < Admin::ApplicationController
 
   def set_bicycle_parking
     @bicycle_parking = BicycleParking.find(params[:id])
+  end
+
+  def set_japan_style_url
+    @mapbox_japan_style = ENV["MAPBOX_JAPAN_STYLE"]
+  end
+
+  def set_access_token
+    @mapbox_access_token = ENV["MAPBOX_ACCESS_TOKEN"]
   end
 
   def bicycle_parking_params

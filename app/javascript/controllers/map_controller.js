@@ -6,7 +6,10 @@ export default class extends Controller {
   static targets = ["map"];
 
   connect() {
+    console.log("スタート")
+    console.log(document.getElementById("data").value)
     const data = JSON.parse(document.getElementById("data").value)
+    console.log(data)
     mapboxgl.accessToken = this.mapTarget.dataset.mapboxAccessToken
     const features = data.map(item => {
       return {
