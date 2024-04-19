@@ -13,7 +13,9 @@
   <body class="bg-blue-50">
     <div class="flex h-screen overflow-hidden">
       <!-- ==== Sidebar Start ==== -->
-      <%= render "layouts/admin/sidebar" %>
+      <% if admin_signed_in? %>
+        <%= render "layouts/admin/sidebar" %>
+      <% end %>
       <!-- ==== Sidebar End ==== -->
       <div class="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden mb-4">
         <%= render "layouts/admin/navbar" %>
