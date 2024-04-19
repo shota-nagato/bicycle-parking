@@ -21,3 +21,6 @@ application.register("notification", NotificationController)
 
 import Popover from '@stimulus-components/popover'
 application.register('popover', Popover)
+
+import SidebarController from "./sidebar_controller"
+application.register("sidebar", SidebarController)
