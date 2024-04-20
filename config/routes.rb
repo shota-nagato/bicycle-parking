@@ -2,8 +2,6 @@ Rails.application.routes.draw do
   require "sidekiq/web"
   mount Sidekiq::Web, at: "/sidekiq"
 
-  get "*not_found" => "application#routing_error"
-
   devise_for :admins, controllers:  {
     sessions: "admin/sessions"
   }
@@ -15,4 +13,6 @@ Rails.application.routes.draw do
   root "map#index"
   resources :search, only: :index
   resources :about, only: :index
+
+  get "*not_found" => "application#routing_error"
 end
