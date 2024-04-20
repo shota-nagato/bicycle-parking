@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   root "map#index"
   resources :search, only: :index
   resources :about, only: :index
+
+  get "*not_found" => "application#routing_error"
 end
