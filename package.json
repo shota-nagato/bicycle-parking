@@ -9,7 +9,7 @@
     "esbuild": "^0.20.2",
     "mapbox-gl": "^3.0.1",
     "mapkick": "^0.2.6",
-    "postcss": "^8.4.33",
+    "postcss": "^8.4.38",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-import": "^16.0.0",
     "postcss-nested": "^6.0.1",
